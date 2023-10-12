@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 # VPC 1
-# You can add more resources specific to each VPC here, such as subnets, security groups, and route tables.
+# You can add more resources specific to each VPC here, such as subnets, security groups, and route tables..
 
 resource "aws_vpc" "vpc1" {
   cidr_block       = "10.0.0.0/16"
