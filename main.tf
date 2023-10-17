@@ -1,20 +1,28 @@
 terraform {
- required_providers {
-aws = {
- source  = "hashicorp/aws"
-version = "~> 4.18.0"
-}
-}
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.18.0"
+    }
+  }
 
- 
-backend "s3" {
-   bucket         = "s3-buckets3"
-   key           = "state/terraform.tfstate1"
-   region         = "us-east-1"
-   encrypt            = true
-   dynamodb_table = "dynamo_db"
+  backend "s3" {
+    bucket             = "s3-buckets3"
+    key                = "state/terraform.tfstate1"
+    region             = "us-east-1"
+    encrypt            = true
+    dynamodb_table     = "dynamo_db"
+  }
 }
-}
+This configuration assumes that you have already created an S3 bucket (core-bucket-mfopen5g) and a DynamoDB table (core-dynamodb) in the specified AWS region (us-east-1).
+
+Please make sure that you have replaced the bucket name, key, and DynamoDB table name with your actual resources. Additionally, ensure that you have the appropriate permissions set up for your AWS credentials to access these resources.
+
+
+
+
+
+
 
 
 # Provider...
