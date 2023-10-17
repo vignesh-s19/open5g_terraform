@@ -353,7 +353,7 @@ resource "aws_instance" "ec2-web1" {
   instance_type               = "t2.medium"
   availability_zone           = "us-east-1a"
   key_name                    = "tf-key-pair"
-  vpc_security_group_ids      = ["${aws_security_group.SG1.id}"]
+  vpc_security_group_ids      = [aws_security_group.SG1.id]
   subnet_id                   = aws_subnet.subnet_vpc1_1.id
   associate_public_ip_address = true
   #user_data                  = file("master_node.sh")
