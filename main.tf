@@ -360,7 +360,7 @@ resource "aws_instance" "ec2-web1" {
 
   connection {
     type        = "ssh"
-    host        = aws_instance.RAN-ec2.public_ip
+    host        = aws_instance.ec2-web1.public_ip
     user        = "ubuntu"
     private_key = tls_private_key.rsa.private_key_pem
   }
@@ -394,7 +394,7 @@ resource "aws_instance" "ec2-web2" {
 
  connection {
     type        = "ssh"
-    host        = aws_instance.RAN-ec2.public_ip
+    host        = aws_instance.ec2-web2.public_ip
     user        = "ubuntu"
     private_key = tls_private_key.rsa.private_key_pem
   }
@@ -427,7 +427,7 @@ resource "aws_instance" "ec2-web3" {
 
  connection {
     type        = "ssh"
-    host        = aws_instance.RAN-ec2.public_ip
+    host        = aws_instance.ec2-web3.public_ip
     user        = "ubuntu"
     private_key = tls_private_key.rsa.private_key_pem
   }
