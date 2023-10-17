@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash.
 sudo snap install microk8s --classic
 sudo usermod -aG microk8s ubuntu
 sudo mkdir -p /home/ubuntu/.kube
