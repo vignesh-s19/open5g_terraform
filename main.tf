@@ -341,12 +341,24 @@ resource "aws_instance" "ec2-web1" {
   associate_public_ip_address = true
   #user_data                  = file("master_node.sh")
 
+  connection {
+    type        = "ssh"
+    host        = aws_instance.RAN-ec2.public_ip
+    user        = "ubuntu"
+    private_key = tls_private_key.rsa.private_key_pem
+  }
+  provisioner "file" {
+   source      = "./tf-key-pair"
+   destination = "/home/ubuntu/tf-key-pair"
+  }
+
   root_block_device {
     volume_size = "50"
     volume_type = "io1"
     iops        = "300"
 
   }
+
 
   tags = {
     Name = "instance_1"
@@ -362,6 +374,17 @@ resource "aws_instance" "ec2-web2" {
   subnet_id                   = aws_subnet.subnet_vpc2_1.id
   associate_public_ip_address = true
   #user_data                  = file("master_node.sh")
+
+ connection {
+    type        = "ssh"
+    host        = aws_instance.RAN-ec2.public_ip
+    user        = "ubuntu"
+    private_key = tls_private_key.rsa.private_key_pem
+  }
+  provisioner "file" {
+   source      = "./tf-key-pair"
+   destination = "/home/ubuntu/tf-key-pair"
+  }
 
   root_block_device {
     volume_size = "50"
@@ -384,6 +407,17 @@ resource "aws_instance" "ec2-web3" {
   subnet_id                   = aws_subnet.subnet_vpc3_1.id
   associate_public_ip_address = true
   #user_data                  = file("master_node.sh")
+
+ connection {
+    type        = "ssh"
+    host        = aws_instance.RAN-ec2.public_ip
+    user        = "ubuntu"
+    private_key = tls_private_key.rsa.private_key_pem
+  }
+  provisioner "file" {
+   source      = "./tf-key-pair"
+   destination = "/home/ubuntu/tf-key-pair"
+  }
 
   root_block_device {
     volume_size = "50"
