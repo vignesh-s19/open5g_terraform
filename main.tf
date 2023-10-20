@@ -1,42 +1,24 @@
 terraform {
-
   required_providers {
-
     aws = {
-
       source  = "hashicorp/aws"
-
       version = "~> 5.20.1"
-
     }
-
   }
-
- 
 
   backend "s3" {
-
     bucket             = ""aws-demobucket-01
-
     key                  = "state/terraform.tfstate1"
-
     region             = "us-east-1"
-
     encrypt            = true
-
     dynamodb_table = "dynamodb"
-
   }
-
 }
 
 
 provider "aws" {
   region = "us-east-1"
 }
-
-# VPC 1
-# You can add more resources specific to each VPC here, such as subnets, security groups, and route tables..
 
 resource "aws_vpc" "vpc1" {
   cidr_block       = "10.0.0.0/16"
