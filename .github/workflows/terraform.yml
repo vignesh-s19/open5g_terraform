@@ -38,14 +38,13 @@ jobs:
       - name: Initialize Terraform
         id: init
         run: terraform init
-        working-directory: .
 
  
 
       - name: Validate Terraform
         id: validate
         run: terraform validate -no-color
-        working-directory: .
+
 
  
 
@@ -53,9 +52,9 @@ jobs:
         id: plan
         run: terraform plan -out=tfplan -no-color
         continue-on-error: true
-        working-directory: .
 
- 
+
+
 
       - name: Apply Terraform Changes
         id: apply
@@ -63,7 +62,6 @@ jobs:
           export TF_LOG=DEBUG
           terraform apply -auto-approve tfplan
         continue-on-error: true
-        working-directory: .
 
  
 
