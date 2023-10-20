@@ -7,11 +7,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket             = "aws-demobucket-01"
+    bucket             = "mubucket10202023"
     key                  = "state/terraform.tfstate1"
     region             = "us-east-1"
     encrypt            = true
-    dynamodb_table = "dynamodb"
+    dynamodb_table = "dynamotable"
   }
 }
 
