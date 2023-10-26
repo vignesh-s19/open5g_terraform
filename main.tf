@@ -7,11 +7,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket             = "my-newbucket-for-vikki"
+    bucket             = "s3-bucket-demo-01"
     key                  = "state/terraform.tfstate1"
     region             = "us-east-1"
     encrypt            = true
-    dynamodb_table = "vikkitable"
+    dynamodb_table = "dynamodb"
   }
 }
 
